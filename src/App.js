@@ -13,21 +13,34 @@ function App(props) {
     props.dispatch(fetchWord(props.choosenWord));
   }
 
+  function selectCurrentComponent(){
+    if(props.isFetching) {
+      return (
+        <div className='loader'></div>
+      )
+    } else if ((props.wordInfo === null) || (Object.keys(props.wordInfo).length !== 0)) {
+      return (
+        <Routes>
+          <Route
+            path="*"
+            element={<Navigate to="/result-page" />}
+          />
+        </Routes>
+      )
+    } else {
+      return (
+        <SearchField
+          handleChange={handleChange}
+          handleClick={handleClick}
+        />
+      )
+    }
+  }
+
   return (
     <div className="App">
       <main className="App-header">
-        {Object.keys(props.wordInfo).length !== 0 ?
-          <Routes>
-            <Route
-              path="*"
-              element={<Navigate to="/result-page" />}
-            />
-          </Routes> :
-          <SearchField
-            handleChange={handleChange}
-            handleClick={handleClick}
-          />
-        }
+        {selectCurrentComponent()}
       </main>
     </div>
   );
