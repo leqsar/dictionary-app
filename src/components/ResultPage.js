@@ -9,15 +9,15 @@ function ResultPage(props) {
         return (<Fragment key={index}>{synonym}, </Fragment>)
       })
       return (
-        <li key={definitionIndex}>
-          <p>{definition.definition}</p>
+        <li key={definitionIndex} className='definition_container'>
+          <p className='definition_container__definition'>{definition.definition}</p>
           {definition.example &&
-            <p>"{definition.example}"</p>
+            <p className='definition__example'>"{definition.example}"</p>
           }
           {synonymsList.length !== 0 &&
-            <div>
+            <div className='synonyms_wrapper'>
               <p>Synonyms:</p>
-              <ul>{synonymsList}</ul>
+              <ul className="synonyms">{synonymsList}</ul>
             </div>
           }
         </li>
@@ -25,7 +25,7 @@ function ResultPage(props) {
     })
     return (
       <li key={meaningIndex}>
-        <p>{meaning.partOfSpeech}</p>
+        <p className='part_of_speech'>{meaning.partOfSpeech}</p>
         <ol>
           {definitionsList}
         </ol>
@@ -33,18 +33,18 @@ function ResultPage(props) {
     )
   })
   return(
-    <div>
-      <div>
+    <div className='result_page'>
+      <div className='main_info_container'>
         <div>
           <h1>{props.word}</h1>
-          <div>
+          <div className='sound-icon'>
             <img src={logo}/>
             <audio src={props.phonetics[0].audio}></audio>
           </div>
         </div>
         <p>{props.origin}</p>
       </div>
-      <ul>
+      <ul className='meanings_container'>
         {meaningsList}
       </ul>
     </div>
