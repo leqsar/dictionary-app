@@ -1,10 +1,15 @@
 import './App.css';
 import {fetchWord,  inputWord} from './actions.js'
 import { connect } from 'react-redux'
+import {Routes, Route, Navigate, useParams} from 'react-router-dom'
 import SearchField from './components/SearchField.js'
-import { Route, Navigate, Routes } from 'react-router';
 
 function App(props) {
+  const params = useParams();
+  if(params.word && !props.isFetching) {
+    props.dispatch(fetchWord(params.word));
+  }
+
   function handleChange(event) {
     props.dispatch(inputWord(event.target.value));
   }
