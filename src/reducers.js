@@ -2,7 +2,8 @@ import {combineReducers} from 'redux'
 import {
   RECEIVE_WORD,
   REQUEST_WORD,
-  INPUT_WORD
+  INPUT_WORD,
+  GO_BACK
 } from './actions.js'
 
 function choosenWord(state = '', action) {
@@ -30,6 +31,10 @@ function word (
       return Object.assign({}, state, {
         isFetching: false,
         wordInfo: action.wordInfo
+      })
+    case GO_BACK:
+      return Object.assign({}, state, {
+        wordInfo: action.word
       })
     default:
       return state

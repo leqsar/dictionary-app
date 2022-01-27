@@ -9,8 +9,9 @@ const Root = ({store}) => (
     <Router>
       <Routes>
         <Route path="/" element={<App />} />
-        <Route path="/:word" element={<App />} />
-        <Route path="/result-page" element={<ResultPage />} />
+          <Route path="/:word" element={<App />} />
+          <Route path="/result-page" element={<ResultPage />} />
+        <Route/>
       </Routes>
     </Router>
   </Provider>

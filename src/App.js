@@ -19,26 +19,25 @@ function App(props) {
   }
 
   function selectCurrentComponent(){
-    if(props.isFetching) {
-      return (
-        <div className='loader'></div>
-      )
-    } else if ((props.wordInfo === null) || (Object.keys(props.wordInfo).length !== 0)) {
-      return (
-        <Routes>
-          <Route
-            path="*"
-            element={<Navigate to="/result-page" />}
-          />
-        </Routes>
-      )
+    let wordInfoIsEmpty = false;
+    if (props.wordInfo === undefined) {
+      wordInfoIsEmpty = true;
     } else {
-      return (
-        <SearchField
-          handleChange={handleChange}
-          handleClick={handleClick}
-        />
-      )
+      if(Object.keys(props.wordInfo).length === 0) {
+        wordInfoIsEmpty = true;
+      }
+    }
+    if(props.isFetching) {
+        return <div className='loader'></div>
+    } else if (!wordInfoIsEmpty) {
+        return <Routes>
+                <Route path="*" element={<Navigate to="/result-page" />} />
+               </Routes>
+    } else {
+        return <SearchField
+                handleChange={handleChange}
+                handleClick={handleClick}
+               />
     }
   }
 
@@ -50,10 +49,11 @@ function App(props) {
 }
 
 function mapStateToProps(state) {
-  const {choosenWord, word} = state;
+  const {choosenWord, word, backButtonState} = state;
   const {isFetching, wordInfo} = word;
 
   return {
+    backButtonState,
     choosenWord,
     isFetching,
     wordInfo

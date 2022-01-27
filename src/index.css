@@ -6,6 +6,21 @@ body {
 .result_page {
   width: 90%;
   margin: 20px auto;
+  position: relative;
+}
+.result_page .back_button {
+  width: 24px;
+  height: 24px;
+  background-color: #262626;
+  border: none;
+  outline: none;
+  position: absolute;
+  top: 10px;
+  left: -5%;
+}
+.result_page .back_button img {
+  width: 24px;
+  height: 24px;
 }
 .result_page .main_info_container p {
   font-size: 13px;
