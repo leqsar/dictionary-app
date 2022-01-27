@@ -39,9 +39,7 @@ function App(props) {
 
   return (
     <div className="App">
-      <main className="App-header">
         {selectCurrentComponent()}
-      </main>
     </div>
   );
 }

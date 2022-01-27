@@ -71,6 +71,30 @@ body {
   width: 100px;
 }
 
+.search_field {
+  width: 60%;
+  height: 60px;
+  margin: 45vh auto;
+}
+.search_field > * {
+  padding: 0;
+  border: 0;
+  font-size: 20px;
+}
+.search_field input {
+  width: 79%;
+  height: 100%;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  text-indent: 30px;
+}
+.search_field button {
+  width: 19%;
+  height: 100%;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
+
 .loader {
   border: 16px solid #f3f3f3;
   /* Light grey */
