@@ -4,6 +4,7 @@ import logo from './sound-logo.png';
 import BackButton from './BackButton.js'
 
 function ResultPage(props) {
+  const audio = new Audio(props.phonetics[0].audio);
   const meaningsList = props.meanings.map((meaning,  meaningIndex) => {
     const definitionsList = meaning.definitions.map((definition, definitionIndex) => {
       const synonymsList =  definition.synonyms.map((synonym, index) => {
@@ -33,16 +34,22 @@ function ResultPage(props) {
       </li>
     )
   })
+
+  function handleClick(event) {
+    audio.play();
+  }
+
   return(
       <div className='result_page'>
         <BackButton/>
         <div className='main_info_container'>
           <div>
             <h1>{props.word}</h1>
-            <div className='sound-icon'>
+            <div className='sound-icon' onClick={handleClick}>
+              <p>{props.phonetics[0].text}</p>
               <img src={logo}/>
-              <audio src={props.phonetics[0].audio}></audio>
             </div>
+
           </div>
           <p>{props.origin}</p>
         </div>
