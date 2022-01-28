@@ -29,7 +29,7 @@ body {
       justify-content: space-around;
       align-items: center;
       margin-top: 30px;
-      margin-left: 90%;
+      margin-left: 80vw;
       height: 32px;
       background-color: white;
       border-radius: 16px;
@@ -47,6 +47,14 @@ body {
 
       &:hover {
         cursor: pointer
+      }
+
+      @media screen and (max-width: 800px) {
+        margin-left: 75%;
+      }
+
+      @media screen and (max-width: 400px) {
+        margin-left: 60%;
       }
     }
   }
@@ -130,6 +138,11 @@ body {
   &:hover {
     cursor: pointer
   }
+
+  @media screen and (max-width: 750px) {
+    left: -1%;
+    top: -1vh;
+  }
 }
 
 .search_field {
@@ -156,6 +169,15 @@ body {
     height: 100%;
     border-top-right-radius: 30px;
     border-bottom-right-radius: 30px;
+    background-color: $side-text-color;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  @media screen and (max-width: 500px) {
+    width: 80%;
   }
 }
 

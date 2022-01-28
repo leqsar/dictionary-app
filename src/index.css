@@ -19,7 +19,7 @@ body {
   justify-content: space-around;
   align-items: center;
   margin-top: 30px;
-  margin-left: 90%;
+  margin-left: 80vw;
   height: 32px;
   background-color: white;
   border-radius: 16px;
@@ -35,6 +35,16 @@ body {
 }
 .result_page .main_info_container .sound-icon:hover {
   cursor: pointer;
+}
+@media screen and (max-width: 800px) {
+  .result_page .main_info_container .sound-icon {
+    margin-left: 75%;
+  }
+}
+@media screen and (max-width: 400px) {
+  .result_page .main_info_container .sound-icon {
+    margin-left: 60%;
+  }
 }
 .result_page .meanings_container {
   display: grid;
@@ -103,6 +113,12 @@ body {
 .back_button:hover {
   cursor: pointer;
 }
+@media screen and (max-width: 750px) {
+  .back_button {
+    left: -1%;
+    top: -1vh;
+  }
+}
 
 .search_field {
   width: 60%;
@@ -126,6 +142,15 @@ body {
   height: 100%;
   border-top-right-radius: 30px;
   border-bottom-right-radius: 30px;
+  background-color: #737373;
+}
+.search_field button:hover {
+  cursor: pointer;
+}
+@media screen and (max-width: 500px) {
+  .search_field {
+    width: 80%;
+  }
 }
 
 .not_found_page {

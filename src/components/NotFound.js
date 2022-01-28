@@ -4,7 +4,7 @@ import BackButton from './BackButton.js'
 function NotFound(props) {
   return (
     <div className='not_found_page'>
-      <p>There is no such word as {props.choosenWord}</p>
+      <p>No such word as {props.choosenWord} found</p>
       <BackButton />
     </div>
   )
