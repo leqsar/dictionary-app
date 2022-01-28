@@ -19,6 +19,7 @@ function App(props) {
   }
 
   function selectCurrentComponent(){
+    console.log(props.error);
     let wordInfoIsEmpty = false;
     if (props.wordInfo === undefined) {
       wordInfoIsEmpty = true;
@@ -30,7 +31,6 @@ function App(props) {
     if(props.isFetching) {
         return <div className='loader'></div>
     } else if (props.error === 404) {
-      console.log('here');
       return <Routes>
               <Route path="*" element={<Navigate to="/not-found" />} />
              </Routes>

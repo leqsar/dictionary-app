@@ -1,9 +1,11 @@
 import { connect } from 'react-redux'
+import BackButton from './BackButton.js'
 
 function NotFound(props) {
   return (
-    <div>
+    <div className='not_found_page'>
       <p>There is no such word as {props.choosenWord}</p>
+      <BackButton />
     </div>
   )
 }

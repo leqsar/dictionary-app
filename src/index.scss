@@ -14,22 +14,6 @@ body {
   margin: 20px auto;
   position: relative;
 
-  .back_button {
-    width: 24px;
-    height: 24px;
-    background-color: $background-color;
-    border: none;
-    outline: none;
-    position: absolute;
-    top: 10px;
-    left: -5%;
-
-    img {
-      width: 24px;
-      height: 24px;
-    }
-  }
-
   .main_info_container {
 
     p {
@@ -111,6 +95,22 @@ body {
   }
 }
 
+.back_button {
+  width: 24px;
+  height: 24px;
+  background-color: $background-color;
+  border: none;
+  outline: none;
+  position: absolute;
+  top: 10px;
+  left: -5%;
+
+  img {
+    width: 24px;
+    height: 24px;
+  }
+}
+
 .search_field {
   width: 60%;
   height: 60px;
@@ -135,6 +135,29 @@ body {
     height: 100%;
     border-top-right-radius: 30px;
     border-bottom-right-radius: 30px;
+  }
+}
+
+.not_found_page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  margin: 20px auto;
+
+  p {
+    font-size: 40px;
+  }
+
+  .back_button {
+    position: static;
+    margin-top: 5vh;
+
+    img {
+      width: 60px;
+      height: 60px;
+    }
   }
 }
 

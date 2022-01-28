@@ -41,8 +41,9 @@ function word (
       })
     case GO_BACK:
       return Object.assign({}, state, {
-        wordInfo: action.word
-      })  
+        wordInfo: action.word,
+        error: ''
+      })
     default:
       return state
   }
