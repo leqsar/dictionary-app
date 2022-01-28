@@ -29,6 +29,11 @@ function App(props) {
     }
     if(props.isFetching) {
         return <div className='loader'></div>
+    } else if (props.error === 404) {
+      console.log('here');
+      return <Routes>
+              <Route path="*" element={<Navigate to="/not-found" />} />
+             </Routes>
     } else if (!wordInfoIsEmpty) {
         return <Routes>
                 <Route path="*" element={<Navigate to="/result-page" />} />
@@ -50,13 +55,14 @@ function App(props) {
 
 function mapStateToProps(state) {
   const {choosenWord, word, backButtonState} = state;
-  const {isFetching, wordInfo} = word;
+  const {isFetching, wordInfo, error} = word;
 
   return {
     backButtonState,
     choosenWord,
     isFetching,
-    wordInfo
+    wordInfo,
+    error
   }
 }
 
