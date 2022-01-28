@@ -49,7 +49,6 @@ function ResultPage(props) {
               <p>{props.phonetics[0].text}</p>
               <img src={logo}/>
             </div>
-
           </div>
           <p>{props.origin}</p>
         </div>
